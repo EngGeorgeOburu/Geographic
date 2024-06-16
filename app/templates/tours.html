@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Tours</h2>
+<div id="tours">
+    {% for tour in tours %}
+        <div>
+            <h3>{{ tour.name }}</h3>
+            <p>{{ tour.description }}</p>
+            <p>Price: ${{ tour.price }}</p>
+            <p>Duration: {{ tour.duration }}</p>
+            <p>Location: {{ tour.location }}</p>
+            <p>Available Dates: {{ tour.available_dates }}</p>
+            <button>Book Now</button>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
