@@ -1,15 +1,32 @@
-body {
-    font-family: Arial, sans-serif;
+body, html {
+    height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+.background {
+    background-image: url('../static/images/forest.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(12, 11, 11);
 }
 
 nav {
-    background-color: #4CAF50;
+    background-color: rgba(137, 194, 31, 0.863); /* Semi-transparent */
     color: white;
     padding: 10px;
+    width: 100%;
     text-align: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 }
 
 nav a {
@@ -20,6 +37,14 @@ nav a {
 
 .content {
     margin: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+    padding: 20px;
+    border-radius: 10px;
+    padding-top: 60px; /* Add padding to the top to avoid overlap with nav bar */
+    width: 80%;
+    max-width: 1200px;
+    margin-top: 100px; /* Ensure content starts below the nav bar */
 }
 
 h1, h2 {
