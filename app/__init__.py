@@ -8,7 +8,11 @@ import os
 load_dotenv()
 
 app = Flask(__name__)
-app.config.from_object('app.config.Config')
+
+# Configure Flask app using environment variables
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
